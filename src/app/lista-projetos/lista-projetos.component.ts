@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Projeto } from '../model/projeto';
+import { ProjetoAPIService } from '../service/projeto-api.service';
 
 @Component({
   selector: 'has-lista-projetos',
@@ -8,12 +10,13 @@ import { Router } from '@angular/router';
 })
 export class ListaProjetosComponent implements OnInit {
 
-  projetos = [{"nome":"Projeto1","sala":"L08","turma":"2Q"},
-              {"nome":"Projeto2","sala":"L09","turma":"2B"}];
+  projetos : Projeto[];
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private service : ProjetoAPIService) { }
 
   ngOnInit() {
+    this.service.getProjetos()
+                .subscribe((dados : Projeto[]) => this.projetos = dados, error => console.log(error));
   }
   detalhes(id: number) {
     this.router.navigate(['detalhe-projeto',id]);
