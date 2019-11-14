@@ -9,7 +9,7 @@ import { retry, catchError } from 'rxjs/operators';
 })
 export class ProjetoAPIService {
 
-apiURL: string = " http://quiteriaetec.somee.com/api/"
+apiURL: string = "/proxy/Projetos";
                                                                                                                                                                                                                                                   
   constructor( private httpClient: HttpClient) { }
 
