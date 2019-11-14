@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule, FormBuilder} from '@angular/forms';
+import { ProjetoAPIService } from '../service/projeto-api.service';
 
 @Component({
   selector: 'has-novo-projeto',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NovoProjetoComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formbuilder : FormBuilder, private projetoapiservice : ProjetoAPIService) { }
 
   ngOnInit() {
   }
+  FormGroup
 
 }
