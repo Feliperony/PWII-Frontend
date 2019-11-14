@@ -1,7 +1,7 @@
 export class Projeto {
-    private id : number;
-    private nome : string;
-    private orientadores : string;
-    private sala : string;
-    private turma : string;
+    private Id : number;
+    private Nome : string;
+    private Orientadores : string;
+    private Sala : string;
+    private Turma : string;
 }

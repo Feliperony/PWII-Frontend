@@ -22,7 +22,7 @@ apiURL: string = "/proxy/Projetos";
   getProjetos() : Observable<Projeto[]>
   {
 
-    return this.httpClient.get<Projeto[]>(this.apiURL + "Projetos")
+    return this.httpClient.get<Projeto[]>(this.apiURL)
                           .pipe(retry(1),
                           catchError(this.handleError))
 
